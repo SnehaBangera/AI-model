@@ -1,0 +1,20 @@
+name: Keep Streamlit App Alive
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # Run every 5 minutes (cron syntax)
+  workflow_dispatch:  # Allow manual trigger of the workflow
+
+jobs:
+  keep_alive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Curl
+        run: sudo apt-get install curl
+
+      - name: Ping the Streamlit app
+        run: curl https://ai-model-fjfwsphqgykclkl3vw58b5.streamlit.app/
