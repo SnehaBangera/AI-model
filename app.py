@@ -540,3 +540,10 @@ elif app_mode == "🌱Plant Disease Detection":
     plant_disease_model()
 elif app_mode == "📚About":
     about_page()
+    
+hide_footer_style = """
+    <style>
+    footer {visibility: hidden;}
+    </style>
+"""
+st.markdown(hide_footer_style, unsafe_allow_html=True)
