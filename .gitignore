@@ -8,3 +8,4 @@ myenv/
 test/
 train/
 valid/
+streamlit_env/
